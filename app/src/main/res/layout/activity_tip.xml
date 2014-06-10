@@ -1,0 +1,163 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}"
+    android:background="@drawable/restaurant">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView"
+        android:scaleType="centerCrop"
+        android:src="@drawable/restaurant"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/etTotal"
+        android:layout_alignParentTop="true"
+        android:hint="Enter total"
+        android:textSize="50dp"
+        android:textAlignment="center"
+        android:textColor="#ffffffff"
+        android:layout_toLeftOf="@+id/btnPlusDiner" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/tvTotalWithTip"
+        android:textColor="#ffffffff"
+        android:textSize="80dp"
+        android:text="$0"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Total with tip"
+        android:id="@+id/textView"
+        android:textColor="#ffffffff"
+        android:layout_below="@+id/btnMinusDiner"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sbTip"
+        android:max="50"
+        android:progress="15"
+        android:layout_below="@+id/tvCustomTip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/tvNumDiners" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Tip: 15%"
+        android:id="@+id/tvCustomTip"
+        android:textColor="#ffffffff"
+        android:layout_below="@+id/etTotal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/btnPlusDiner"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        style="@style/NiceButton"
+        android:layout_below="@+id/tvNumDinersTitle"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Diners"
+        android:id="@+id/tvNumDinersTitle"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/btnPlusDiner"
+        android:layout_alignEnd="@+id/btnPlusDiner"
+        android:layout_marginRight="11dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="1"
+        android:gravity="center"
+        android:id="@+id/tvNumDiners"
+        android:layout_below="@+id/btnPlusDiner"
+        android:layout_alignLeft="@+id/btnPlusDiner"
+        android:layout_alignStart="@+id/btnPlusDiner"
+        android:textColor="#FFFFFF"
+        android:layout_alignRight="@+id/btnPlusDiner"
+        android:layout_alignEnd="@+id/btnPlusDiner"
+        android:textSize="30dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:id="@+id/btnMinusDiner"
+        android:layout_below="@+id/tvNumDiners"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        style="@style/NiceButton"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/sbTip" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Total with tip per diner"
+        android:id="@+id/tvTotalPerDinerTitle"
+        android:textColor="#ffffffff"
+        android:layout_below="@+id/tvTotalWithTip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/tvTotalPerDiner"
+        android:textColor="#ffffffff"
+        android:textSize="80dp"
+        android:text="$0"
+        android:layout_below="@+id/tvTotalPerDinerTitle"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/tvWarning"
+        android:textColor="#ff4136"
+        android:layout_marginTop="17dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_below="@+id/tvTotalPerDiner"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
